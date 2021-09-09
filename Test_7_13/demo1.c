@@ -1,275 +1,275 @@
-// 1. ´òÓ¡100-200Ö®¼äµÄÖÊÊı
-//#include<stdio.h>
-//#include<math.h>
-//int main() 
-//{
-//	int i = 0;
-//	int flag = 0;
-//	for (i = 100; i <= 200; i++)
-//	{
-//		int j = 0;
-//		for (int j = 2; j <= (int)sqrt(i); j++)
-//		{
-//			if (i % j == 0)
-//			{
-//				flag = 1;
-//				break;
-//			}
-//		}
-//		if (flag)
-//		{
-//			flag = 0;
-//		}
-//		else
-//			printf("%dÊÇÖÊÊı\n", i);
-//	}
-//	return 0;
-//}
+// 1. æ‰“å°100-200ä¹‹é—´çš„è´¨æ•°
+#include<stdio.h>
+#include<math.h>
+int main() 
+{
+	int i = 0;
+	int flag = 0;
+	for (i = 100; i <= 200; i++)
+	{
+		int j = 0;
+		for (int j = 2; j <= (int)sqrt(i); j++)
+		{
+			if (i % j == 0)
+			{
+				flag = 1;
+				break;
+			}
+		}
+		if (flag)
+		{
+			flag = 0;
+		}
+		else
+			printf("%dæ˜¯è´¨æ•°\n", i);
+	}
+	return 0;
+}
 
 
-// 2.Êä³ö³Ë·¨¿Ú¾÷±í
+// 2.è¾“å‡ºä¹˜æ³•å£è¯€è¡¨
 # include <stdio.h>
-//int main()
-//{
-//	int i = 0;
-//	for (i = 1; i <= 9; i++)
-//	{
-//		int j = 1;
-//		for (j = 1; j <= i; j++)
-//		{
-//			printf("%d*%d = %d ", i, j, i * j);
-//		}
-//		printf("\n");
-//	}
-//	return 0;
-//}
+int main()
+{
+	int i = 0;
+	for (i = 1; i <= 9; i++)
+	{
+		int j = 1;
+		for (j = 1; j <= i; j++)
+		{
+			printf("%d*%d = %d ", i, j, i * j);
+		}
+		printf("\n");
+	}
+	return 0;
+}
 
-// 3. ÅĞ¶Ï1000Äê-2000ÄêÖ®¼äµÄÈòÄê
-//# include <stdio.h>
-//int main()
-//{
-//	int year = 0;
-//	for (year = 1000; year <= 2000; year++)
-//	{
-//		if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0))
-//		{
-//			printf("%dÄêÊÇÈòÄê\n", year);
-//		}
-//	}
-//	return 0;
-//}
+// 3. åˆ¤æ–­1000å¹´-2000å¹´ä¹‹é—´çš„é—°å¹´
+# include <stdio.h>
+int main()
+{
+	int year = 0;
+	for (year = 1000; year <= 2000; year++)
+	{
+		if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0))
+		{
+			printf("%då¹´æ˜¯é—°å¹´\n", year);
+		}
+	}
+	return 0;
+}
 
-// 4.½»»»Á½¸öÕûĞÍ±äÁ¿µÄÖµ
-//# include <stdio.h>
-//void Swap(int* pn, int* pm)
-//{
-//	int tmp = *pn;
-//	*pn = *pm;
-//	*pm = tmp;
-//}
-//int main()
-//{
-//	int n = 0, m = 0;
-//	printf("ÊäÈëÁ½¸öÊıÖµ>:");
-//	scanf_s("%d %d", &n, &m);
-//	printf("½»»»Ö®Ç°n = %d ,m = %d\n", n, m);
-//	Swap(&n, &m);
-//	printf("½»»»Ö®ºón = %d ,m = %d\n", n, m);
-//}
+// 4.äº¤æ¢ä¸¤ä¸ªæ•´å‹å˜é‡çš„å€¼
+# include <stdio.h>
+void Swap(int* pn, int* pm)
+{
+	int tmp = *pn;
+	*pn = *pm;
+	*pm = tmp;
+}
+int main()
+{
+	int n = 0, m = 0;
+	printf("è¾“å…¥ä¸¤ä¸ªæ•°å€¼>:");
+	scanf_s("%d %d", &n, &m);
+	printf("äº¤æ¢ä¹‹å‰n = %d ,m = %d\n", n, m);
+	Swap(&n, &m);
+	printf("äº¤æ¢ä¹‹ån = %d ,m = %d\n", n, m);
+}
 
-// 5.²»´´½¨ÁÙÊ±±äÁ¿£¬½»»»Á½¸öÊıµÄÄÚÈİ(Òì»òµÄ·½·¨)
-//#include<stdio.h>
-//int main()
-//{
-//	int n = 0, m= 0;
-//	n = 5;
-//	m = 7;
-//	printf("½»»»Ö®Ç°n = %d ,m = %d\n", n, m);
-//	n = n ^ m;
-//	m = n ^ m;
-//	n = n ^ m;
-//	printf("½»»»Ö®ºón = %d ,m = %d\n", n, m);
-//	return 0;
-//}
+// 5.ä¸åˆ›å»ºä¸´æ—¶å˜é‡ï¼Œäº¤æ¢ä¸¤ä¸ªæ•°çš„å†…å®¹(å¼‚æˆ–çš„æ–¹æ³•)
+#include<stdio.h>
+int main()
+{
+	int n = 0, m= 0;
+	n = 5;
+	m = 7;
+	printf("äº¤æ¢ä¹‹å‰n = %d ,m = %d\n", n, m);
+	n = n ^ m;
+	m = n ^ m;
+	n = n ^ m;
+	printf("äº¤æ¢ä¹‹ån = %d ,m = %d\n", n, m);
+	return 0;
+}
 
-//6.Çó10¸öÕûÊıÖĞ×î´óÖµ
-//# include <stdio.h>
-//int main()
-//{
-//	int arr[] = { 1,3,6,7,8,2,10,5,6,9 };
-//	int sz = sizeof(arr) / sizeof(arr[0]);  //ÇóµÃÊı×éÔªËØ¸öÊı
-//	int i = 0;
-//	int max = arr[0];                      // ÏÈ¸ømax³õÊ¼»¯£¬±éÀúÊı×éºÍmax±È´óĞ¡
-//	for (i = 1; i < sz; i++)
-//	{
-//		if (arr[i] > max)
-//			max = arr[i];
-//	}
-//	printf("max = % d", max);
-//	return 0;
-//}
+//6.æ±‚10ä¸ªæ•´æ•°ä¸­æœ€å¤§å€¼
+# include <stdio.h>
+int main()
+{
+	int arr[] = { 1,3,6,7,8,2,10,5,6,9 };
+	int sz = sizeof(arr) / sizeof(arr[0]);  //æ±‚å¾—æ•°ç»„å…ƒç´ ä¸ªæ•°
+	int i = 0;
+	int max = arr[0];                      // å…ˆç»™maxåˆå§‹åŒ–ï¼Œéå†æ•°ç»„å’Œmaxæ¯”å¤§å°
+	for (i = 1; i < sz; i++)
+	{
+		if (arr[i] > max)
+			max = arr[i];
+	}
+	printf("max = % d", max);
+	return 0;
+}
 
-// 7.ÇóÁ½¸öÊıµÄ×î´ó¹«Ô¼Êı
-//# include <stdio.h>
-//int main()
-//{
-//	int x = 0, y = 0;
-//	scanf_s("%d %d", &x, &y);
-//	int i = 0;
-//	for (i = (x < y) ? x : y;i>=1 ; i--)
-//	{
-//		if (1==i)
-//			printf("%dºÍ%dÎŞ¹«Ô¼Êı", x, y);
-//		else if ((x % i == 0) && (y % i) == 0)
-//		{
-//			printf("%dÊÇ%dºÍ%dµÄ×î´ó¹«Ô¼Êı\n", i, x, y);
-//			break;
-//		}
-//	}
-//	return 0;
-//}
+// 7.æ±‚ä¸¤ä¸ªæ•°çš„æœ€å¤§å…¬çº¦æ•°
+# include <stdio.h>
+int main()
+{
+	int x = 0, y = 0;
+	scanf_s("%d %d", &x, &y);
+	int i = 0;
+	for (i = (x < y) ? x : y;i>=1 ; i--)
+	{
+		if (1==i)
+			printf("%då’Œ%dæ— å…¬çº¦æ•°", x, y);
+		else if ((x % i == 0) && (y % i) == 0)
+		{
+			printf("%dæ˜¯%då’Œ%dçš„æœ€å¤§å…¬çº¦æ•°\n", i, x, y);
+			break;
+		}
+	}
+	return 0;
+}
 
-//8. ½«Êı×éAÖĞµÄÄÚÈİºÍÊı×éBÖĞµÄÄÚÈİ½øĞĞ½»»»
-//# include <stdio.h>
-//void Swap_array(int arr1[], int arr2[], int sz)
-//{
-//	int i = 0;
-//	for (i = 0; i < sz; i++)
-//	{
-//		int tmp = arr1[i];
-//		arr1[i] = arr2[i];
-//		arr2[i] = arr1[i];
-//	}
-//}
-//int main()
-//{
-//	int arr1[] = { 1,2,3,4,5 };
-//	int arr2[] = { 6,7,8,9,10 };
-//	int sz = sizeof(arr1) / sizeof(arr1[0]);
-//	printf("½»»»Ç°µÄarr1:");
-//	for (int i = 0; i < sz; i++)
-//	{
-//		printf("%d ", arr1[i]);
-//	}
-//	Swap_array(arr1, arr2, sz);
-//	printf("\n½»»»ºóµÄarr1:");
-//	for (int i = 0; i < sz; i++)
-//	{
-//		printf("%d ", arr1[i]);
-//	}
-//	return 0;
-//}
+8. å°†æ•°ç»„Aä¸­çš„å†…å®¹å’Œæ•°ç»„Bä¸­çš„å†…å®¹è¿›è¡Œäº¤æ¢
+# include <stdio.h>
+void Swap_array(int arr1[], int arr2[], int sz)
+{
+	int i = 0;
+	for (i = 0; i < sz; i++)
+	{
+		int tmp = arr1[i];
+		arr1[i] = arr2[i];
+		arr2[i] = arr1[i];
+	}
+}
+int main()
+{
+	int arr1[] = { 1,2,3,4,5 };
+	int arr2[] = { 6,7,8,9,10 };
+	int sz = sizeof(arr1) / sizeof(arr1[0]);
+	printf("äº¤æ¢å‰çš„arr1:");
+	for (int i = 0; i < sz; i++)
+	{
+		printf("%d ", arr1[i]);
+	}
+	Swap_array(arr1, arr2, sz);
+	printf("\näº¤æ¢åçš„arr1:");
+	for (int i = 0; i < sz; i++)
+	{
+		printf("%d ", arr1[i]);
+	}
+	return 0;
+}
 
-// 9.¼ÆËã1/1-1/2+1/3-1/4+1/5 ¡­¡­ + 1/99 - 1/100 µÄÖµ
-//# include <stdio.h>
-//int main()
-//{
-//	double sum = 0.0;
-//	int i = 0;
-//	for (i = 1; i <= 100; i++)
-//	{
-//		if (i%2!=0)
-//			sum += 1.0 / i;
-//		else
-//			sum -= 1.0 / i;
-//	}
-//	printf("%lf", sum);
-//	return 0;
-//}
+// 9.è®¡ç®—1/1-1/2+1/3-1/4+1/5 â€¦â€¦ + 1/99 - 1/100 çš„å€¼
+# include <stdio.h>
+int main()
+{
+	double sum = 0.0;
+	int i = 0;
+	for (i = 1; i <= 100; i++)
+	{
+		if (i%2!=0)
+			sum += 1.0 / i;
+		else
+			sum -= 1.0 / i;
+	}
+	printf("%lf", sum);
+	return 0;
+}
 
-//10. ±àĞ´³ÌĞòÊıÒ»ÏÂ 1µ½ 100 µÄËùÓĞÕûÊıÖĞ³öÏÖ¶àÉÙ¸öÊı×Ö9
-//# include <stdio.h>
-//int main()
-//{
-//	int i = 0;
-//	for (i = 0; i <= 100; i ++ )
-//	{
-//		if ((i % 10 == 9) || (i / 10 == 9))
-//			printf("%d \n", i);
-//	}
-//	return 0;
-//}
+//10. ç¼–å†™ç¨‹åºæ•°ä¸€ä¸‹ 1åˆ° 100 çš„æ‰€æœ‰æ•´æ•°ä¸­å‡ºç°å¤šå°‘ä¸ªæ•°å­—9
+# include <stdio.h>
+int main()
+{
+	int i = 0;
+	for (i = 0; i <= 100; i ++ )
+	{
+		if ((i % 10 == 9) || (i / 10 == 9))
+			printf("%d \n", i);
+	}
+	return 0;
+}
 
-// 11.ÔÚÆÁÄ»ÉÏÊä³öÁâĞÎ
-//# include <stdio.h>
-//int main()
-//{
-//	int line = 19;
-//	//scanf_s("%d", &n);
-//    int i = 0;
-//    for (i = 1; i <= line ; i++)
-//    {
-//        if (i <= line / 2 + 1)
-//        {
-//            int j = 0;
-//            for (j = 1; j <= line; j++)
-//            {
-//                if (j >= ((line + 1) / 2 + 1 - i) && j <= ((line + 1) / 2 + 1 - i + 2 * i - 2))   //ÉÏ°ë²¿·Ö*µÄÆğÊ¼Î»ÖÃ£¬¼°Ã¿ĞĞ´òÓ¡¸öÊıÎª2*i-1
-//                    printf("*");
-//                else
-//                    printf(" ");
-//            }
-//            printf("\n");
-//        }
-//        else
-//        {
-//            int j = 0;
-//            for (j = 1; j <= line; j++)
-//            {
-//                if (j >= (i -(line+1)/2+1) && j <= (i- (line + 1) / 2 +1+2*(line+1-i)-2))  //ÏÂ°ë²¿·Ö*µÄÆğÊ¼Î»ÖÃ£¬¼°Ã¿ĞĞ´òÓ¡¸öÊıÎª2*(line+1-i)-1
-//                    printf("*");
-//                else
-//                    printf(" ");
-//            }
-//            printf("\n");
-//        }
-//    }
-//	return 0;
-//}
+// 11.åœ¨å±å¹•ä¸Šè¾“å‡ºè±å½¢
+# include <stdio.h>
+int main()
+{
+	int line = 19;
+	//scanf_s("%d", &n);
+   int i = 0;
+   for (i = 1; i <= line ; i++)
+   {
+       if (i <= line / 2 + 1)
+       {
+           int j = 0;
+           for (j = 1; j <= line; j++)
+           {
+               if (j >= ((line + 1) / 2 + 1 - i) && j <= ((line + 1) / 2 + 1 - i + 2 * i - 2))   //ä¸ŠåŠéƒ¨åˆ†*çš„èµ·å§‹ä½ç½®ï¼ŒåŠæ¯è¡Œæ‰“å°ä¸ªæ•°ä¸º2*i-1
+                   printf("*");
+               else
+                   printf(" ");
+           }
+           printf("\n");
+       }
+       else
+       {
+           int j = 0;
+           for (j = 1; j <= line; j++)
+           {
+               if (j >= (i -(line+1)/2+1) && j <= (i- (line + 1) / 2 +1+2*(line+1-i)-2))  //ä¸‹åŠéƒ¨åˆ†*çš„èµ·å§‹ä½ç½®ï¼ŒåŠæ¯è¡Œæ‰“å°ä¸ªæ•°ä¸º2*(line+1-i)-1
+                   printf("*");
+               else
+                   printf(" ");
+           }
+           printf("\n");
+       }
+   }
+	return 0;
+}
 
-// 12 Çó³ö0¡«999Ö®¼äµÄËùÓĞ¡°Ë®ÏÉ»¨Êı¡±²¢Êä³ö
-//# include <stdio.h>
-//# include <math.h>
-//int main()
-//{
-//	int i = 0;
-//	
-//	for (i = 100; i < 1000; i++)
-//	{
-//		int ret = i;
-//		int tmp = 0;
-//		int sum = 0;
-//		while (ret)
-//		{
-//			int tmp = ret % 10;
-//			sum += (int)pow(tmp, 3);
-//			ret /= 10;
-//		}
-//		if (sum == i)
-//		{
-//			printf("%dÊÇË®ÏÉ»¨Êı\n", i);
-//		}
-//	}
-//	return 0;
-//}
+// 12 æ±‚å‡º0ï½999ä¹‹é—´çš„æ‰€æœ‰â€œæ°´ä»™èŠ±æ•°â€å¹¶è¾“å‡º
+# include <stdio.h>
+# include <math.h>
+int main()
+{
+	int i = 0;
+	
+	for (i = 100; i < 1000; i++)
+	{
+		int ret = i;
+		int tmp = 0;
+		int sum = 0;
+		while (ret)
+		{
+			int tmp = ret % 10;
+			sum += (int)pow(tmp, 3);
+			ret /= 10;
+		}
+		if (sum == i)
+		{
+			printf("%dæ˜¯æ°´ä»™èŠ±æ•°\n", i);
+		}
+	}
+	return 0;
+}
 
-// 13.  ÇóSn=a+aa+aaa+aaaa+aaaaaµÄÇ°5ÏîÖ®ºÍ£¬ÆäÖĞaÊÇÒ»¸öÊı×Ö
-//# include <stdio.h>
-//#include <math.h>
-//int main()
-//{
-//	int a = 2;
-//	int n = 4;
-//	int i = 0;
-//	int ret = 0;
-//	int sum = 0;
-//	for (i = 0; i < n; i++)
-//	{
-//		//¼Ón¸öÊı
-//		ret = 10 * ret+ a;
-//        printf("%d+", ret);
-//		sum += ret;
-//	}
-//	printf(" = %d", sum);
-//	return 0;
-//}
+// 13.  æ±‚Sn=a+aa+aaa+aaaa+aaaaaçš„å‰5é¡¹ä¹‹å’Œï¼Œå…¶ä¸­aæ˜¯ä¸€ä¸ªæ•°å­—
+# include <stdio.h>
+#include <math.h>
+int main()
+{
+	int a = 2;
+	int n = 4;
+	int i = 0;
+	int ret = 0;
+	int sum = 0;
+	for (i = 0; i < n; i++)
+	{
+		//åŠ nä¸ªæ•°
+		ret = 10 * ret+ a;
+       printf("%d+", ret);
+		sum += ret;
+	}
+	printf(" = %d", sum);
+	return 0;
+}
