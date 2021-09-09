@@ -2,530 +2,530 @@
 
 
 // my_strstr
-//# include <stdio.h>
-//#include <string.h>
-//#include <assert.h>
-//char* my_strstr(const char* p1, const char* p2)
-//{
-//	assert(NULL != p1);
-//	assert(NULL != p2);
-//
-//	char* s1 = (char*) p1;
-//	char* s2 = (char*) p2;
-//	char* cur = (char*)p1;
-//
-//	// ±»²éÕÒµÄ×Ö·û´®²»ÄÜÎª¿Õ
-//	if (!*p2)   //    if (*p2=='\0')
-//	{
-//		return (char*)p1;
-//	}
-//
-//	// 
-//	while (*cur)
-//	{
-//		s1 = cur;
-//		s2 = (char*)p2; 
-//		while (*s1 && *s2 && !(*s1-*s2)) // µÈÓÚwhile((*p1 == '\0')&&(*p2 == '\0')&&(*s1 == *s2)) 
-//		{
-//			s1++;
-//			s2++;
-//		}
-//		if (!*s2)
-//		{
-//			return cur;   // ÕÒµ½×Ö´®
-//		}
-//		if (!*s1)
-//		{
-//			return NULL;   // ÕÒµ½×Ö´®
-//		}
-//		cur++;
-//	}
-//	return NULL;   //ÕÒ²»µ½×Ö´®
-//}
-//int main()
-//{
-//	char* p1 = "abccdefdfghjk";
-//	char* p2 = "cde";
-//	char *ret = my_strstr(p1, p2);
-//	if (ret == NULL)
-//	{
-//		printf("ÕÒ²»µ½");
-//	}
-//	else
-//		printf("%s", ret);
-//	return 0;
-//}
+# include <stdio.h>
+#include <string.h>
+#include <assert.h>
+char* my_strstr(const char* p1, const char* p2)
+{
+	assert(NULL != p1);
+	assert(NULL != p2);
+
+	char* s1 = (char*) p1;
+	char* s2 = (char*) p2;
+	char* cur = (char*)p1;
+
+	// è¢«æŸ¥æ‰¾çš„å­—ç¬¦ä¸²ä¸èƒ½ä¸ºç©º
+	if (!*p2)   //    if (*p2=='\0')
+	{
+		return (char*)p1;
+	}
+
+	// 
+	while (*cur)
+	{
+		s1 = cur;
+		s2 = (char*)p2; 
+		while (*s1 && *s2 && !(*s1-*s2)) // ç­‰äºwhile((*p1 == '\0')&&(*p2 == '\0')&&(*s1 == *s2)) 
+		{
+			s1++;
+			s2++;
+		}
+		if (!*s2)
+		{
+			return cur;   // æ‰¾åˆ°å­—ä¸²
+		}
+		if (!*s1)
+		{
+			return NULL;   // æ‰¾åˆ°å­—ä¸²
+		}
+		cur++;
+	}
+	return NULL;   //æ‰¾ä¸åˆ°å­—ä¸²
+}
+int main()
+{
+	char* p1 = "abccdefdfghjk";
+	char* p2 = "cde";
+	char *ret = my_strstr(p1, p2);
+	if (ret == NULL)
+	{
+		printf("æ‰¾ä¸åˆ°");
+	}
+	else
+		printf("%s", ret);
+	return 0;
+}
 
 //strtok
-//# include <stdio.h>
-//#include <string.h>
-//int main()
-//{
-//	char arr[] = "zhaozhiyang1997@gmail.com";
-//	char* p = "@.";
-//	char buffer[1024] = { 0 };
-//	strcpy(buffer, arr);
-//	// ÇĞ¸îbufferÖĞµÄ×Ö·û´®
-//	char* ret = NULL;
-//	for (ret = strtok(arr, p); ret; ret = strtok(NULL, p))   // strtokÊ×´Îµ÷ÓÃ(arr,p),ÒÔºó¶¼ÊÇ(NULL,p)
-//	{
-//		printf("%s\n", ret);
-//	}
-//	return 0;
-//}
+# include <stdio.h>
+#include <string.h>
+int main()
+{
+	char arr[] = "zhaozhiyang1997@gmail.com";
+	char* p = "@.";
+	char buffer[1024] = { 0 };
+	strcpy(buffer, arr);
+	// åˆ‡å‰²bufferä¸­çš„å­—ç¬¦ä¸²
+	char* ret = NULL;
+	for (ret = strtok(arr, p); ret; ret = strtok(NULL, p))   // strtoké¦–æ¬¡è°ƒç”¨(arr,p),ä»¥åéƒ½æ˜¯(NULL,p)
+	{
+		printf("%s\n", ret);
+	}
+	return 0;
+}
 
-// ´óĞ¡¶Ë×Ö½ÚĞò
-//int check()
-//{
-//	union un
-//	{
-//		char c;
-//		int i;
-//	}u;
-//	u.i = 1;
-//	return u.c;
-//}
-//
-//int main() 
-//{
-//	int a = 1;
-//	if (check())
-//		printf("Ğ¡¶Ë");
-//	else
-//		printf("´ó¶Ë");
-//	return 0;
-//}
+å¤§å°ç«¯å­—èŠ‚åº
+int check()
+{
+	union un
+	{
+		char c;
+		int i;
+	}u;
+	u.i = 1;
+	return u.c;
+}
 
-// ¶¯Ì¬ÄÚ´æ¹ÜÀí
+int main() 
+{
+	int a = 1;
+	if (check())
+		printf("å°ç«¯");
+	else
+		printf("å¤§ç«¯");
+	return 0;
+}
+
+// åŠ¨æ€å†…å­˜ç®¡ç†
 # include <stdlib.h>
 # include <string.h>
 # include <errno.h>
 # include <stdio.h>
-//
-//int main()
-//{
-//	int *p = (int *)malloc(10 * sizeof(int));
-//	if (NULL == p)
-//	{
-//		printf("%s", strerror(errno));
-//	}
-//	else
-//	{
-//		int i = 0;
-//		for (i = 0; i < 10; i++)
-//		{
-//			p[i] = i;
-//			printf("%d ", p[i]);
-//		}
-//	}
-//
-//	// µ±ÉêÇëµÄ¶¯Ì¬¿Õ¼ä²»ÔÙÊ¹ÓÃµÄÊ±ºò£¬Ó¦¸Ãfree£¨ÊÍ·Å£©¿Õ¼ä
-//	free(p);
-//	p = NULL;  
-//	return 0;
-//}
+
+int main()
+{
+	int *p = (int *)malloc(10 * sizeof(int));
+	if (NULL == p)
+	{
+		printf("%s", strerror(errno));
+	}
+	else
+	{
+		int i = 0;
+		for (i = 0; i < 10; i++)
+		{
+			p[i] = i;
+			printf("%d ", p[i]);
+		}
+	}
+
+	// å½“ç”³è¯·çš„åŠ¨æ€ç©ºé—´ä¸å†ä½¿ç”¨çš„æ—¶å€™ï¼Œåº”è¯¥freeï¼ˆé‡Šæ”¾ï¼‰ç©ºé—´
+	free(p);
+	p = NULL;  
+	return 0;
+}
 
 # include <stdlib.h>
 # include <string.h>
 # include <errno.h>
 # include <stdio.h>
-//int main()
-//{
-//	int* p =(int*)calloc(10, sizeof(int));
-//	if (NULL == p)
-//	{
-//		printf("%s\n", strerror(errno));
-//	}
-//	else
-//	{
-//		int i = 0;
-//		for (i = 0; i < 10; i++)
-//		{
-//			printf("%d ", p[i]);
-//		}
-//	}
-//	free(p); // ÓÃÓÚÊÍ·Å¶¯Ì¬¿ª±ÙµÄ¿Õ¼ä
-//	p = NULL;
-//	return 0;
-//}
+int main()
+{
+	int* p =(int*)calloc(10, sizeof(int));
+	if (NULL == p)
+	{
+		printf("%s\n", strerror(errno));
+	}
+	else
+	{
+		int i = 0;
+		for (i = 0; i < 10; i++)
+		{
+			printf("%d ", p[i]);
+		}
+	}
+	free(p); // ç”¨äºé‡Šæ”¾åŠ¨æ€å¼€è¾Ÿçš„ç©ºé—´
+	p = NULL;
+	return 0;
+}
 
 
-//int main()
-//{
-//	int* p = (int*)malloc(10);
-//	int* ptr = realloc(p, 40);   // ÓÃÒ»¸öĞÂµÄ±äÁ¿À´½ÓÊÜreallocº¯ÊıµÄ·µ»ØÖµ
-//
-//	if (NULL != ptr)
-//	{
-//		p = ptr;
-//		int i = 0;
-//		for (i = 5; i < 10; i++)
-//		{
-//			printf("%d ", (p[i]=i));
-//		}
-//
-//	}
-//
-//	free(p); //ÓÃÓÚÊÍ·Å¶¯Ì¬¿ª±ÙµÄ¿Õ¼ä
-//	p = NULL;
-//
-//	return 0;
-//}
+int main()
+{
+	int* p = (int*)malloc(10);
+	int* ptr = realloc(p, 40);   // ç”¨ä¸€ä¸ªæ–°çš„å˜é‡æ¥æ¥å—reallocå‡½æ•°çš„è¿”å›å€¼
 
-//struct S
-//{
-//	int n;
-//	int arr[];  // ÈáĞÔÊı×é³ÉÔ±
-//};
-//int main()
-//{
-//	// printf("%d", sizeof(struct S));
-//	struct S* p = (struct S*)malloc(sizeof(struct S) + 10 * sizeof(int));
-//	p->n = 100;
-//	int i = 0;
-//	for(i = 0; i < 10; i++)
-//	{
-//		p->arr[i] = i;
-//	}
-//	free(p);
-//	p = NULL;
-//	return 0;
-//}
+	if (NULL != ptr)
+	{
+		p = ptr;
+		int i = 0;
+		for (i = 5; i < 10; i++)
+		{
+			printf("%d ", (p[i]=i));
+		}
 
+	}
 
-//struct S
-//{
-//	int n;
-//	int *arr;   //¶¨ÒåÒ»¸öÖ¸Õë
-//};
-//
-//int main()
-//{
-//	printf("%d", sizeof(struct S));
-//	int i = 0;
-//	struct S* p = (struct S*)malloc(sizeof(struct S));
-//	p->n = 100;
-//	p->arr = (int*)malloc(10 * sizeof(int));
-//
-//	for (i = 0; i < 10; i++)
-//	{
-//		p->arr[i] = i;
-//	}
-//
-//	free(p->arr); 
-//	p->arr = NULL;
-//	free(p);
-//	p = NULL;
-//	return 0;
-//}
+	free(p); //ç”¨äºé‡Šæ”¾åŠ¨æ€å¼€è¾Ÿçš„ç©ºé—´
+	p = NULL;
 
-//# include <stdlib.h>
-//# include <string.h>
-//# include <errno.h>
-//# include <stdio.h>
-//struct M
-//{
-//	char c;
-//	int a[];
-//};
-//int main()
-//{
-//	struct M m = {0};
-//	int i = 0;
-//	struct M* p = (struct M*)malloc(sizeof(struct M) + 10 * sizeof(int));
-//	if (p != NULL)
-//	{
-//		p->c = 'c';
-//		for (i = 0; i < 10; i++)
-//		{
-//			p->a[i] = i;
-//			printf("%d ", p->a[i]);
-//		}
-//	}
-//	free(p);
-//	p = NULL;
-//	return 0;
-//}
+	return 0;
+}
+
+struct S
+{
+	int n;
+	int arr[];  // æŸ”æ€§æ•°ç»„æˆå‘˜
+};
+int main()
+{
+	// printf("%d", sizeof(struct S));
+	struct S* p = (struct S*)malloc(sizeof(struct S) + 10 * sizeof(int));
+	p->n = 100;
+	int i = 0;
+	for(i = 0; i < 10; i++)
+	{
+		p->arr[i] = i;
+	}
+	free(p);
+	p = NULL;
+	return 0;
+}
 
 
+struct S
+{
+	int n;
+	int *arr;   //å®šä¹‰ä¸€ä¸ªæŒ‡é’ˆ
+};
 
-//#include <stdio.h>
-//int main()
-//{
-//    int a = 10000;
-//    FILE* pf = fopen("test.txt", "wb");
-//    fwrite(&a, 4, 1, pf);  //¶ş½øÖÆµÄĞÎÊ½Ğ´µ½ÎÄ¼şÖĞ
-//    fclose(pf);
-//    pf = NULL;
-//    return 0;
-//}
+int main()
+{
+	printf("%d", sizeof(struct S));
+	int i = 0;
+	struct S* p = (struct S*)malloc(sizeof(struct S));
+	p->n = 100;
+	p->arr = (int*)malloc(10 * sizeof(int));
 
-//int main()
-//{
-//	// ÏòÎÄ¼şĞ´Êı¾İ
-//	FILE* pf = fopen("test.txt", "w");
-//	fputc('b', pf);
-//	fputc(' ', pf);
-//	fputc('a', pf);
-//	fputc('t', pf);
-//	fclose(pf);
-//	pf = NULL;
-//	return 0;
-//}
+	for (i = 0; i < 10; i++)
+	{
+		p->arr[i] = i;
+	}
 
+	free(p->arr); 
+	p->arr = NULL;
+	free(p);
+	p = NULL;
+	return 0;
+}
 
-//int main()
-//{
-//	// ÏòÎÄ¼ş¶ÁÊı¾İ
-//	FILE* pf = fopen("test.txt", "r");
-//	printf("%c", fgetc(pf));
-//	printf("%c", fgetc(pf));
-//	printf("%c", fgetc(pf));
-//	fclose(pf);
-//	pf = NULL;
-//	return 0;
-//}
-
-//# include <stdio.h>
-//# include <errno.h>
-//# include <string.h>
-//int main()
-//{
-//	FILE* pf = fopen("test.txt", "w");
-//	if (NULL == pf)
-//	{
-//		printf("%s\n", strerror(errno));
-//		return 0;
-//	}
-//	//
-//	fputc('a', pf);
-//	fputc('b', pf);
-//	fputc('c', pf);
-//	fclose(pf);
-//	pf = NULL;
-//	return 0;
-//}
+# include <stdlib.h>
+# include <string.h>
+# include <errno.h>
+# include <stdio.h>
+struct M
+{
+	char c;
+	int a[];
+};
+int main()
+{
+	struct M m = {0};
+	int i = 0;
+	struct M* p = (struct M*)malloc(sizeof(struct M) + 10 * sizeof(int));
+	if (p != NULL)
+	{
+		p->c = 'c';
+		for (i = 0; i < 10; i++)
+		{
+			p->a[i] = i;
+			printf("%d ", p->a[i]);
+		}
+	}
+	free(p);
+	p = NULL;
+	return 0;
+}
 
 
-//# include <stdio.h>
-//# include <errno.h>
-//# include <string.h>
-//int main()
-//{
-//	FILE* pf = fopen("test.txt", "r");
-//	if (NULL == pf)
-//	{
-//		printf("%s\n", strerror(errno));
-//		return 0;
-//	}
-//	printf("%c", fgetc(pf));
-//	printf("%c", fgetc(pf));
-//	printf("%c", fgetc(pf));
-//	fclose(pf);
-//	pf = NULL;
-//	return 0;
-//}
+
+#include <stdio.h>
+int main()
+{
+   int a = 10000;
+   FILE* pf = fopen("test.txt", "wb");
+   fwrite(&a, 4, 1, pf);  //äºŒè¿›åˆ¶çš„å½¢å¼å†™åˆ°æ–‡ä»¶ä¸­
+   fclose(pf);
+   pf = NULL;
+   return 0;
+}
+
+int main()
+{
+	// å‘æ–‡ä»¶å†™æ•°æ®
+	FILE* pf = fopen("test.txt", "w");
+	fputc('b', pf);
+	fputc(' ', pf);
+	fputc('a', pf);
+	fputc('t', pf);
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
 
 
-//int main()
-//{
-//	char buf[30] = { 0 };
-//	FILE* pf = fopen("test.txt", "r");
-//	fgets(buf, 30, pf);
-//	printf("%s", buf);
-//	fclose(pf);
-//	pf = NULL;
-//	return 0;
-//}
+int main()
+{
+	// å‘æ–‡ä»¶è¯»æ•°æ®
+	FILE* pf = fopen("test.txt", "r");
+	printf("%c", fgetc(pf));
+	printf("%c", fgetc(pf));
+	printf("%c", fgetc(pf));
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
 
-//int main()
-//{
-//	char buf[30] = { 0 };
-//	//fgets(buf,30,stdin);   // ´Ó±ê×¼ÊäÈëÁ÷¶ÁÈ¡
-//	//fputs(buf, stdout);    // Êä³öµ½±ê×¼Êä³öÁ÷
-//
-//	gets(buf);
-//	puts(buf);
-//	return 0;
-//}
-
-
-//struct S
-//{
-//	int n;
-//	float score;
-//	char arr[10];
-//};
-//
-//int main()
-//{
-//	struct S s = { 100,3.14f,"hello" };
-//	FILE* pf = fopen("test.txt","w");
-//	if (NULL == pf)
-//	{
-//		return 0;
-//	}
-//	// ¸ñÊ½»¯ĞÎÊ½Ğ´
-//	fprintf(pf, "%d %f %s", s.n, s.score, s.arr);
-//
-//	fclose(pf);
-//	pf = NULL;
-//	return 0;
-//}
-
-//struct S
-//{
-//	int n;
-//	float score;
-//	char arr[10];
-//};
-//
-//int main()
-//{
-//	struct S s = { 0 };
-//	//FILE* pf = fopen("test.txt","r");
-//	// ¸ñÊ½»¯ĞÎÊ½Ğ´
-//	/*fscanf(pf, "%d%f%s", &s.n, &s.score, s.arr);
-//	printf("%d %f %s", s.n, s.score, s.arr);*/
-//
-//	fscanf(stdin, "%d %f %s", &s.n, &s.score, s.arr);
-//
-//	fprintf(stdout,"%d %f %s", s.n, s.score, s.arr);
-//	//fclose(pf);
-//	//pf = NULL;
-//	return 0;
-//}
+# include <stdio.h>
+# include <errno.h>
+# include <string.h>
+int main()
+{
+	FILE* pf = fopen("test.txt", "w");
+	if (NULL == pf)
+	{
+		printf("%s\n", strerror(errno));
+		return 0;
+	}
+	//
+	fputc('a', pf);
+	fputc('b', pf);
+	fputc('c', pf);
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
 
 
-//struct S
-//{
-//	int n;
-//	float score;
-//	char arr[10];
-//};
-//
-//int main()
-//{
-//	struct S s = { 100,3.14f,"abcdef"};
-//	struct S tmp = { 0 };
-//	char buf[30] = { 0 };
-//	sprintf(buf,"%d %f %s", s.n, s.score, s.arr);
-//	printf("%s\n", buf);
-//
-//	sscanf(buf, "%d %f %s",&tmp.n,&tmp.score,tmp.arr);
-//	printf("%d %f %s", tmp.n, tmp.score, tmp.arr);
-//	return 0;
-//}
+# include <stdio.h>
+# include <errno.h>
+# include <string.h>
+int main()
+{
+	FILE* pf = fopen("test.txt", "r");
+	if (NULL == pf)
+	{
+		printf("%s\n", strerror(errno));
+		return 0;
+	}
+	printf("%c", fgetc(pf));
+	printf("%c", fgetc(pf));
+	printf("%c", fgetc(pf));
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
 
 
-//¶ş½øÖÆ¶ÁÈë
+int main()
+{
+	char buf[30] = { 0 };
+	FILE* pf = fopen("test.txt", "r");
+	fgets(buf, 30, pf);
+	printf("%s", buf);
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
 
-//¶ş½øÖÆ¶Á³ö
-//struct S 
-//{
-//	char name[20];
-//	int age;
-//	double score;
-//};
-//int main()
-//{
-//	struct S s = { "ÕÅÈı",20,55.6 };
-//	FILE* pf = fopen("test.txt", "wb");
-//	if (NULL == pf)
-//	{
-//		return 0;
-//	}
-//	//¶ş½øÖÆĞÎÊ½Ğ´ÎÄ¼ş
-//	fwrite(&s,sizeof(struct S),1,pf);
-//	fclose(pf);
-//	pf = NULL;
-//	return 0;
-//}
+int main()
+{
+	char buf[30] = { 0 };
+	//fgets(buf,30,stdin);   // ä»æ ‡å‡†è¾“å…¥æµè¯»å–
+	//fputs(buf, stdout);    // è¾“å‡ºåˆ°æ ‡å‡†è¾“å‡ºæµ
 
-//struct S
-//{
-//	char name[20];
-//	int age;
-//	double score;
-//};
-//int main()
-//{
-//	struct S s = { 0 };
-//	FILE* pf = fopen("test.txt", "rb");
-//	if (NULL == pf)
-//	{
-//		return 0;
-//	}
-//	//¶ş½øÖÆĞÎÊ½¶ÁÎÄ¼ş
-//	fread(&s, sizeof(struct S), 1, pf);
-//	printf("%s %d %lf", s.name, s.age, s.score);
-//
-//	fclose(pf);
-//	pf = NULL;
-//	return 0;
-//}
+	gets(buf);
+	puts(buf);
+	return 0;
+}
 
-//int main()
-//{
-//	FILE* pf = fopen("test.txt", "r");
-//	if (NULL == pf)
-//	{
-//		return 0;
-//	}
-//	// 1.¶¨Î»ÎÄ¼şÖ¸Õë
-//	fseek(pf, -2, SEEK_END);
-//	// 2.¶ÁÈ¡ÎÄ¼ş
-//	printf("%c", fgetc(pf));
-//	fclose(pf);
-//	pf = NULL;
-//	return 0;
-//}
+
+struct S
+{
+	int n;
+	float score;
+	char arr[10];
+};
+
+int main()
+{
+	struct S s = { 100,3.14f,"hello" };
+	FILE* pf = fopen("test.txt","w");
+	if (NULL == pf)
+	{
+		return 0;
+	}
+	// æ ¼å¼åŒ–å½¢å¼å†™
+	fprintf(pf, "%d %f %s", s.n, s.score, s.arr);
+
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
+
+struct S
+{
+	int n;
+	float score;
+	char arr[10];
+};
+
+int main()
+{
+	struct S s = { 0 };
+	//FILE* pf = fopen("test.txt","r");
+	// æ ¼å¼åŒ–å½¢å¼å†™
+	/*fscanf(pf, "%d%f%s", &s.n, &s.score, s.arr);
+	printf("%d %f %s", s.n, s.score, s.arr);*/
+
+	fscanf(stdin, "%d %f %s", &s.n, &s.score, s.arr);
+
+	fprintf(stdout,"%d %f %s", s.n, s.score, s.arr);
+	//fclose(pf);
+	//pf = NULL;
+	return 0;
+}
+
+
+struct S
+{
+	int n;
+	float score;
+	char arr[10];
+};
+
+int main()
+{
+	struct S s = { 100,3.14f,"abcdef"};
+	struct S tmp = { 0 };
+	char buf[30] = { 0 };
+	sprintf(buf,"%d %f %s", s.n, s.score, s.arr);
+	printf("%s\n", buf);
+
+	sscanf(buf, "%d %f %s",&tmp.n,&tmp.score,tmp.arr);
+	printf("%d %f %s", tmp.n, tmp.score, tmp.arr);
+	return 0;
+}
+
+
+äºŒè¿›åˆ¶è¯»å…¥
+
+äºŒè¿›åˆ¶è¯»å‡º
+struct S 
+{
+	char name[20];
+	int age;
+	double score;
+};
+int main()
+{
+	struct S s = { "å¼ ä¸‰",20,55.6 };
+	FILE* pf = fopen("test.txt", "wb");
+	if (NULL == pf)
+	{
+		return 0;
+	}
+	//äºŒè¿›åˆ¶å½¢å¼å†™æ–‡ä»¶
+	fwrite(&s,sizeof(struct S),1,pf);
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
+
+struct S
+{
+	char name[20];
+	int age;
+	double score;
+};
+int main()
+{
+	struct S s = { 0 };
+	FILE* pf = fopen("test.txt", "rb");
+	if (NULL == pf)
+	{
+		return 0;
+	}
+	//äºŒè¿›åˆ¶å½¢å¼è¯»æ–‡ä»¶
+	fread(&s, sizeof(struct S), 1, pf);
+	printf("%s %d %lf", s.name, s.age, s.score);
+
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
+
+int main()
+{
+	FILE* pf = fopen("test.txt", "r");
+	if (NULL == pf)
+	{
+		return 0;
+	}
+	// 1.å®šä½æ–‡ä»¶æŒ‡é’ˆ
+	fseek(pf, -2, SEEK_END);
+	// 2.è¯»å–æ–‡ä»¶
+	printf("%c", fgetc(pf));
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
 
 // fprintf
-//# include <stdio.h>
-//int main()
-//{
-//	printf("%s\n", __FILE__);    // ÎÄ¼şÃû³Æ
-//	printf("%d\n", __LINE__);    //  ĞĞºÅ
-//	printf("%s\n", __DATE__);
-//	printf("%s\n", __TIME__);
-//
-//	// Ğ´ÈÕÖ¾ÎÄ¼ş
-//	int i = 0;
-//	int arr[10] = { 0 };
-//	FILE* pf = fopen("log.txt", "w");
-//	for (i = 0; i < 10; i++)
-//	{
-//		arr[i] = i;
-//		fprintf(pf, "file : %s line : %d date : %s time : %s i = %d\n", __FILE__, __LINE__, __DATE__, __TIME__, i);
-//	}
-//	fclose(pf);
-//	pf = NULL;
-//	for (i = 0; i < 10; i++)
-//	{
-//		printf("%d",arr[i]);
-//	}
-//	return 0;
-//}
+# include <stdio.h>
+int main()
+{
+	printf("%s\n", __FILE__);    // æ–‡ä»¶åç§°
+	printf("%d\n", __LINE__);    //  è¡Œå·
+	printf("%s\n", __DATE__);
+	printf("%s\n", __TIME__);
+
+	// å†™æ—¥å¿—æ–‡ä»¶
+	int i = 0;
+	int arr[10] = { 0 };
+	FILE* pf = fopen("log.txt", "w");
+	for (i = 0; i < 10; i++)
+	{
+		arr[i] = i;
+		fprintf(pf, "file : %s line : %d date : %s time : %s i = %d\n", __FILE__, __LINE__, __DATE__, __TIME__, i);
+	}
+	fclose(pf);
+	pf = NULL;
+	for (i = 0; i < 10; i++)
+	{
+		printf("%d",arr[i]);
+	}
+	return 0;
+}
 
 // fgetc
-//#include <stdio.h>
-//#include <stdlib.h>
-//int main(void)
-//{
-//    FILE* fp = fopen("test.txt", "r");
-//    if (fp == NULL) 
-//    {
-//        perror("File opening failed : ");
-//        return 0;
-//    }
-//
-//    int c;          // ×¢Òâ£ºint£¬·Çchar£¬ÒªÇó´¦ÀíEOF
-//    while ((c = fgetc(fp)) != EOF) 
-//    {
-//        putchar(c);
-//    }
-//    fclose(fp);
-//    fp = NULL;
-//    return 0;
-//}
+#include <stdio.h>
+#include <stdlib.h>
+int main(void)
+{
+   FILE* fp = fopen("test.txt", "r");
+   if (fp == NULL) 
+   {
+       perror("File opening failed : ");
+       return 0;
+   }
+
+   int c;          // æ³¨æ„ï¼šintï¼Œécharï¼Œè¦æ±‚å¤„ç†EOF
+   while ((c = fgetc(fp)) != EOF) 
+   {
+       putchar(c);
+   }
+   fclose(fp);
+   fp = NULL;
+   return 0;
+}
