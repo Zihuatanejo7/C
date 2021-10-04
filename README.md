@@ -1,7 +1,5 @@
-# C/Cplusplus
 
 # C 语言
-
 
 
 ## 一 概论
